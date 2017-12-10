@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+	<!-- 启用自动动态方法的调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<!-- 全局配置 -->
+    <!-- <package name="default" namespace="/" extends="struts-default">
+    </package> -->
+    <!-- 模块化管理包 -->
+    <package name="usermanager" strict-method-invocation="false" namespace="/" extends="struts-default">
+    	<action name="*User" class="com.qhit.lh.gr3.liu.sbm.user.action.UserAction" method="{1}" >
+    		<result name="success">/jsp/admin_index.jsp</result>
+    		<result name="input">index.jsp</result>
+    		<result name="listUser">jsp/userAdmin.jsp</result>
+    		<result name="adduser" type="chain">getAllUser</result>
+    		<result name="addFile">/jsp/userAdd.jsp</result>
+    	</action>
+    </package>                                          
+</struts>
