@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.qhit.lh.gr3.liu.hb.bean.User" table="td_user">
+		<id name="uid" column="uid" type="integer">
+			<!-- 主键自增 -->
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="uname" column="uname" type="string"></property>
+		<property name="upassword" column="pwd" type="string"></property>
+		<property name="birthday" column="birthday" type="string"></property>
+		<property name="sex" column="sex" type="string"></property>
+		<property name="enable" column="enable" type="integer"></property>
+		<property name="deptid" column="deptid" type="integer" insert="false" update="false"></property>
+		
+		<one-to-one name="type" class="com.qhit.lh.gr3.liu.hb.bean.Type" cascade="all"></one-to-one>
+		
+		<many-to-one name="dept" class="com.qhit.lh.gr3.liu.hb.bean.Dept" column="deptid" lazy="false" ></many-to-one>
+	</class>
+</hibernate-mapping>

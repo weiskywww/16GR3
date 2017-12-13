@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.qhit.lh.gr3.liu.hb.bean.Dept" table="td_dept">
+		<id name="oid" column="oid" type="integer">
+			<!-- 主键自增 -->
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="deptname" column="deptname" type="string"></property>
+		<property name="address" column="address" type="string"></property>
+		
+		<one-to-one name="user" class="com.qhit.lh.gr3.liu.hb.bean.User" cascade="all"></one-to-one>
+	</class>
+</hibernate-mapping>
