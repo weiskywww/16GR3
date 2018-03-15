@@ -1,0 +1,14 @@
+SQL> show sga;
+
+Total System Global Area 5094195200 bytes                                       
+Fixed Size                  2184552 bytes                                       
+Variable Size            2684357272 bytes                                       
+Database Buffers         2399141888 bytes                                       
+Redo Buffers                8511488 bytes                                       
+SQL> select user from dual;
+
+USER                                                                            
+------------------------------------------------------------                    
+SYS                                                                             
+
+SQL> spool off;

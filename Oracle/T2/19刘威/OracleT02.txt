@@ -1,0 +1,66 @@
+SQL> select name from v$database;
+
+NAME                                                                            
+------------------                                                              
+ORCL                                                                            
+
+SQL> create table dept(
+  2  did integer primary key,
+  3  dname varchar(20),
+  4  tel varchar(15),
+  5  ress varchar(20)
+  6  );
+
+表已创建。
+
+SQL> insert into dept value (1, '董事会'，'111111','沈阳');
+insert into dept value (1, '董事会'，'111111','沈阳')
+                        *
+第 1 行出现错误: 
+ORA-00928: 缺失 SELECT 关键字 
+
+
+SQL> insert into dept values (1, '董事会'，'111111','沈阳');
+
+已创建 1 行。
+
+SQL> insert into dept values(2,'市场部'，'222222','武汉');
+
+已创建 1 行。
+
+SQL> insert into dept values(3,'研发部'，'333333','长春');
+
+已创建 1 行。
+
+SQL> commit
+  2  ；
+  3  ;
+；
+*
+第 2 行出现错误: 
+ORA-00911: 无效字符 
+
+
+SQL> commit;
+
+提交完成。
+
+SQL> select *  from dept;
+
+       DID DNAME                                                                
+---------- ----------------------------------------                             
+TEL                            RESS                                             
+------------------------------ ----------------------------------------         
+         1 董事会                                                               
+111111                         沈阳                                             
+                                                                                
+         2 市场部                                                               
+222222                         武汉                                             
+                                                                                
+         3 研发部                                                               
+333333                         长春                                             
+                                                                                
+
+SQL> ttitle '部门列表';
+SQL> btitle '制表人：TOM';
+SQL> spool off;
